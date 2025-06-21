@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95836438, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95836438" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- start mathjax  -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- end mathjax  -->
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    {% block headscript %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--    start header-->
+        <header id='header' class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="logo">Structal</div>
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__list-item"><a class="menu__list-linc"
+                                    href="{{ url_for('index')}}">Главная</a>
+                            </li>
+                            <!-- <li class="menu__list-item"><a class="menu__list-linc" href="#">Резюме</a></li>
+                            <li class="menu__list-item"><a class="menu__list-linc"
+                                    href="#">Портфолио</a></li> -->
+                            <li class="menu__list-item"><a class="menu__list-linc"
+                                    href="{{ url_for('app_catalog')}}">Каталог
+                                    расчетов</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--    end header-->
+        <main class="main">
+            <!--    start content-->
+            {% block content %}
+
+            {% endblock %}
+            <!--    end content-->
+        </main>
+        <!--      start footer-->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <hr>
+                </div>
+            </div>
+        </footer>
+        <!--      end footer-->
+    </div>
+    <script src="https://kit.fontawesome.com/49dce634cb.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
